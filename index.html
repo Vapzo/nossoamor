@@ -26,17 +26,44 @@
       margin-top: 40px;
       color: #cc3366;
     }
+    .texto-romantico {
+  font-size: 1.3em;
+  margin-top: 30px;
+  color: #cc4b6c;
+  font-style: italic;
+}
   </style>
+  
 </head>
 <body>
   <h1>Desde que começamos a namorar 💑</h1>
   <div id="contador"></div>
-<!-- Texto romântico -->
-<div class="texto-romantico">
-  "Cada segundo ao seu lado é um presente que o tempo me dá. Te amo com todo o meu coração."
-</div>
+  <!-- Texto Romântico -->
+   <div class="texto-romantico">
+    "Eita, já se passaram 5 anos desde que a gente começou essa aventura maluca juntos! Quem diria que a gente aguentaria tanto tempo, hein? (Brincadeira, aguentar é pouco eu te amo demais, minha vida)
 
-<div class="frase">"Te amarei pela vida toda, meu amor."</div>
+Nesse tempo, rolou muita risada, muita conversa boba, umas DRs de leve, mas no fim sempre com muito amor e parceria. Você é minha parceira de zoeira, minha melhor amiga e, claro, o amor da minha vida.
+
+Hoje, no Dia dos Namorados, só quero dizer: valeu por estar do meu lado, por me aturar e por fazer cada dia melhor (mesmo quando a gente só quer ficar no sofá vendo série). Que venham mais anos de muita diversão, abraço apertado e amor sem fim!
+
+Te amo, sua linda! Bora continuar essa bagunça juntos! 💖🎉"
+   
+</div>
+   
+   <div class="carrossel">
+  <button class="anterior" onclick="mudarSlide(-1)">❮</button>
+
+  <div class="slides">
+    <img class="slide ativo" src="foto1.jpg" alt="Foto 1" />
+    <img class="slide" src="foto2.jpg" alt="Foto 2" />
+    <img class="slide" src="foto3.jpg" alt="Foto 3" />
+    <!-- ... -->
+    <img class="slide" src="foto19.jpg" alt="Foto 18" />
+  </div>
+
+  <button class="proximo" onclick="mudarSlide(1)">❯</button>
+</div>
+  <div class="frase">"Te amarei pela vida toda, meu amor."</div>
 
   <audio autoplay loop>
     <source src="vida-toda.mp3" type="audio/mpeg">
