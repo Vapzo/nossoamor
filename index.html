@@ -32,6 +32,57 @@
   color: #cc4b6c;
   font-style: italic;
 }
+.carrossel {
+  position: relative;
+  width: 90%;
+  max-width: 600px;
+  margin: 50px auto;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.slide {
+  min-width: 100%;
+  display: none;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.slide.ativo {
+  display: block;
+}
+
+.anterior,
+.proximo {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.6);
+  border: none;
+  font-size: 2em;
+  cursor: pointer;
+  padding: 5px 12px;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.anterior:hover,
+.proximo:hover {
+  background: rgba(255,255,255,0.9);
+}
+
+.anterior {
+  left: 10px;
+}
+.proximo {
+  right: 10px;
+}
   </style>
   
 </head>
@@ -91,6 +142,24 @@ Te amo, sua linda! Bora continuar essa bagunça juntos! 💖🎉"
 
     setInterval(atualizarContador, 1000);
     atualizarContador();
-  </script>
+    let slideAtual = 0;
+  const slides = document.querySelectorAll(".slide");
+
+  function mostrarSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.classList.remove("ativo");
+      if (i === index) slide.classList.add("ativo");
+    });
+  }
+
+  function mudarSlide(direcao) {
+    slideAtual += direcao;
+    if (slideAtual < 0) slideAtual = slides.length - 1;
+    if (slideAtual >= slides.length) slideAtual = 0;
+    mostrarSlide(slideAtual);
+  }
+
+  mostrarSlide(slideAtual);
+</script>
 </body>
 </html>
